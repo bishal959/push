@@ -18,7 +18,7 @@ jobs:
         - uses: actions/checkout@v3
         - name: Login
           run: |
-            echo ${{ secrets.PAT }} | docker login ghcr.io -u ${{ github.actor }} --password-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
+            echo ${{ secrets.PAT }} | docker login ghcr.io -u ${{ github.actor }} -p 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
         - name: Build and Publish
           run: |
             docker build . --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
